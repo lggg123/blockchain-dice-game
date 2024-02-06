@@ -6,11 +6,11 @@ async function main() {
 
   const lockedAmount = ethers.parseEther("0.001");
 
-  const lock = await ethers.deployContract("Lock", [unlockTime], {
+  const diceGame = await ethers.deployContract("DiceGame", [unlockTime], {
     value: lockedAmount,
   });
 
-  await lock.waitForDeployment();
+  await diceGame.waitForDeployment();
 
   console.log(
     `Lock with ${ethers.formatEther(
